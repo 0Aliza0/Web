@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Circular Dots Loader</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #000000;
+            margin: 0;
+        }
+        .dot {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: rgb(153, 77, 216);
+            border-radius: 50%;
+            animation: spin 1.5s linear infinite;
+        }
+        .dot:nth-child(1) {
+            width: 15px;
+            height: 15px;
+            animation-delay: 0s;
+        }
+        .dot:nth-child(2) {
+            width: 13px;
+            height: 13px;
+            animation-delay: 0.2s;
+        }
+        .dot:nth-child(3) {
+            width: 11px;
+            height: 11px;
+            animation-delay: 0.4s;
+        }
+        .dot:nth-child(4) {
+            width: 9px;
+            height: 9px;
+            animation-delay: 0.6s;
+        }
+        .dot:nth-child(5) {
+            width:8px;
+            height:8px;
+            animation-delay:0.8s;
+        }
+        .dot:nth-child(6) {
+            width:7px;
+            height:7px;
+            animation-delay:1s;
+        }
+        .dot:nth-child(7) {
+            width:5px;
+            height:5px;
+            animation-delay:1.2s;
+        }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg) translateX(40px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(40px) rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"> <!--loader class didn't use in css codes-->
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+
+    </div>
+</body>
+</html>
