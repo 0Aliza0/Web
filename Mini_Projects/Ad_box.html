@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad-box</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        
+        body{
+            background-color: rgb(173, 172, 172);
+            font-family:Arial, Helvetica, sans-serif;
+            
+        }
+        .main-box{
+            position: absolute;
+            left:0;
+            right:0;
+            margin-left: auto;
+            margin-right: auto;
+            width:300px;
+            height:450px;
+            border-radius:5px;
+            box-shadow: 2px 2px 7px rgb(201, 198, 198);
+            background-color: rgb(255, 255, 255);
+            transition:transform 0.5s;
+            cursor:pointer;
+        }
+        .main-box:hover{
+            transform:translateY(-15px);
+            transition:transform ease 0.5s;
+            
+        }
+        .cover{
+            display: flex;
+            width:100%;
+            height:40%;
+            background:url(https://www.bbva.com/wp-content/uploads/2020/05/hack_webcam-1920x1180.jpg);
+            background-size: cover;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            overflow: hidden;
+        }
+        .cover:hover button{
+            transition:all ease 0.5s;
+            transform:translate(0);
+        }
+        .more-btn{
+            display:flex;
+            justify-content: flex-start;
+            align-self: flex-end;
+            background-color: rgb(13, 194, 194);
+            color:rgb(255, 255, 255);
+            border:none;
+            width:100px;
+            height:40px;
+            transform:translate(-100%);
+            box-sizing: border-box;
+            padding: 13px;
+            transition:transform ease 0.5s;
+            cursor:pointer;
+            outline: none;
+        }
+        .more-btn:hover{
+            background-color: rgb(202, 202, 0);
+        }
+        /*########################*/
+        .title{
+            font-size:30px;
+            text-align: center;
+            color:rgb(134, 134, 134);
+        }
+        .title i{
+            font-size: 15px;
+        }
+        /*Footer*/
+        .footer{
+            position:inherit;
+            bottom: 0;
+            width: 100%;
+            height:25%;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-top:1px solid gray;
+            
+        }
+        .price{
+            float: left;
+            border-right:1px solid gray;
+            height:100%;
+            width:50%;
+            text-align: center;
+        }
+        .price pre{
+            margin-top: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 25px;
+        }
+        .price b{
+            color:rgb(85, 84, 84);
+        }
+        .price span{
+            color:green;
+        }
+        /*# Rating #*/
+        .rate{
+            font-size: 20px;
+            text-align: center;
+        }
+        .rate p{
+            color:rgb(85, 84, 84);
+        }
+        .on{
+            color: rgb(38, 38, 104);
+        }
+        .on:hover{
+            font-size:1.2em;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <div class="main-box">
+        <div class="cover"><button class="more-btn">Read more.</button></div>
+        <div class="title"><br><b>Hack & Security</b><br><i>AliZA</i></div>
+        <div class="footer">
+        <div class="price">
+<pre><b>Price:</b>
+<span>10$</span></pre></div>
+        <div class="rate"><p>Vote:</p><i class='fa fa-star on'></i><i class='fa fa-star on'></i><i class='fa fa-star on'></i><i class='fa fa-star on'></i></div>
+        </div>
+    </div>
+</body>
+</html>
