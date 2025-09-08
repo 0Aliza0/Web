@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wave Circle Animation</title>
+    <style>
+        .status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .wave-circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgb(3, 255, 3);
+            position: relative;
+            animation: wave 0.8s infinite;
+        }
+        .main-circle{
+            width:38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: rgb(3, 255, 3);
+            position: absolute;
+        }
+        @keyframes wave {
+            0% {
+                transform: scale(2);
+                opacity: 1;
+            }
+            75%{
+                opacity:0.5;
+            }
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="status">
+        <div class="wave-circle"></div>
+        <div class="main-circle"></div>
+    </div>
+</body>
+</html>
