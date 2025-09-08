@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Transform</title>
+    <style>
+        body{
+            margin:0;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            overflow:hidden;
+            background-color: #f0f0f0;
+        }
+        .cursor{
+            width:17px;
+            height:17px;
+            border:1px solid rgb(221, 26, 26);
+            background-color: transparent;
+            border-radius:50%;
+            position:absolute;
+            pointer-events: none;
+            transform: translate(-50%,-50%);
+            transition: 0.3s ease-out;
+            z-index:1;
+        }
+        /* Test Button is here don't need to copy this part of code*/
+        button{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            padding:10px 20px;
+            font-size:16px;
+            cursor:pointer;
+        }
+        /* for color transition*/
+        @keyframes colorTransition{
+            0%{
+                background: radial-gradient(circle,transparent,transparent);
+            }
+            100%{
+                background: radial-gradient(circle,rgb(221, 26, 26),transparent);
+            }
+        }
+        .cursor.hovered{
+            animation:colorTransition 0.3s forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <button>Hover over me!</button>
+    <!--Java Script-->
+    <script>
+        const circle = document.querySelector('.cursor');
+
+        document.addEventListener('mousemove',function(e){
+            circle.style.left = e.pageX + 'px';
+            circle.style.top = e.pageY + 'px';
+        });
+        //Button-hover effect
+        document.addEventListener('mouseover',function(e){
+            if (e.target.tagName === 'BUTTON'){
+                circle.classList.add('hovered') //change bg-color to red
+            }
+        });
+
+        document.addEventListener('mouseout',function(e){
+            if (e.target.tagName === 'BUTTON'){
+                circle.classList.remove('hovered') //change bg-color back to orginal
+            }
+        });
+    </script>
+</body>
+</html>
