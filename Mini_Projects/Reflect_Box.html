@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflect Box</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            font-family: tahoma;
+            background-color: #202020;
+            margin: 0;
+        }
+        .text{
+            padding:20px;
+            font-size:large;
+            background-color: #03e914;
+            -webkit-box-reflect: below
+            1px linear-gradient(transparent, #0005);
+            box-shadow:0 0 5px #03e914,0 0 15px #03e914,
+            0 0 25px #03e914,0 0 100px #03e914;
+        }
+    </style>
+</head>
+<body>
+    <p class="text">Reflect Box</p>
+</body>
+</html>
