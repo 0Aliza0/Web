@@ -1,0 +1,219 @@
+  /*iran sans font*/
+  @font-face {
+    font-family: 'iran sans';
+    src: url('../fonts/IRANSans.ttf') format('truetype'),
+        url('../fonts/IRANSans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'iran sans';
+    background-image: url(../photoes/etc/bg.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.head {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 13%;
+    background-color: #ffffff;
+    box-shadow: 0 3px 3px #bdbdbd;
+    z-index: 1;
+}
+
+.menubtn {
+    width: 12%;
+    height: 13%;
+    color:#990033;
+    background-color: #ffffff;
+    border: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.menubtn:hover {
+    background-color: #990033;
+    color: #ffffff;
+    box-shadow: 0 0 2px 2px #858484;
+}
+
+/*Menu open modal*/
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.85);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+/*End*/
+
+.logo {
+    display: grid;
+    place-items: center;
+    margin-top: -2px;
+}
+
+.content {
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    border-radius: 4px;
+    color:#990033;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 4px 2px gray;
+}
+.content h2{
+    text-align: right;
+    margin-right:10%;
+}
+.content p{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.about-us{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    place-items: center;
+    background-color: #990033;
+    color:#ffffff;
+}
+.about-us button{
+    padding: 15px;
+    border:none;
+    background-color:#ffffff;
+    color:#990033;
+    font-family: 'iran sans';
+    font-weight: bold;
+    border-radius:10px;
+    cursor:pointer;
+}
+.about-us input{
+    width:60%;
+    padding:15px;
+    border:none;
+    border-radius:3px;
+    font-family:'iran sans';
+    outline: none;
+    color:#990033;
+}
+.about-us a{
+    color:#ffffff;
+    text-decoration:underline;
+}
+.copy-right{
+    background-color: gray;
+    color: #ffffff;
+}
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: #990033;
+    text-align: center;
+}
+hr{
+    height: 2px;
+    background-color:#990033;
+    border-top:none;
+}
+footer {
+    position: absolute;
+    bottom: 0 auto; 
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+@media only screen and (min-width: 768px){
+    .logo img{
+        width:10%;
+    }
+}
+/* phone styles*/
+@media only screen and (max-width: 600px){
+    .about-us{
+    display: grid;
+    grid-template-columns: auto;
+    place-items: center;
+}
+.head{
+    height:10%;
+}
+.menubtn {
+    width: 18%;
+    height: 10%;
+}
+.content{
+    width:97%;
+    font-size: small;
+}
+.mail-div {
+    margin-top:20px;
+}
+.details{
+    margin-right:8px;
+    font-size: small;
+}
+.copy-right p{
+    font-size: small;
+}
+h1{
+    font-size:20px;
+}
+hr{
+    height:2px;
+}
+}
