@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step Connector</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            background-color: #f0f0f0;
+            font-family: tahoma;
+            margin:0;
+        }
+        .container{
+            text-align: center;
+        }
+        .step-indicator{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            margin-bottom:20px;
+            background-color:#333;
+            border-radius: 5px;
+        }
+        .step{
+            padding:10px 15px;
+            border:2px solid #797979;
+            border-radius: 50%;
+            background-color: #797979;
+            color:#333;
+            font-weight: bold;
+            transition: background-color 0.5s ease;
+        }
+        .completed{
+            background-color: rgb(94, 94, 240);
+            color:#b6b6b6;
+        }
+        .connector{
+            width:50px;
+            height:2px;
+            background-color: #797979;
+        }
+        .buttons{
+            margin-top:20px;
+        }
+        .buttons button{
+            padding:10px 20px;
+            margin:5px;
+            border:none;
+            border-radius: 3px;
+            background-color:rgb(94, 94, 240);
+            color:#fff;
+            cursor:pointer;
+        }
+        .buttons button:disabled{
+            background-color: #ccc;
+            cursor:not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="step-indicator">
+            <div class="step completed">1</div>
+            <div class="connector"></div>
+            <div class="step">2</div>
+            <div class="connector"></div>
+            <div class="step">3</div>
+            <div class="connector"></div>
+            <div class="step">4</div>
+        </div>
+        <div class="buttons">
+            <button id="prevBtn" onclick="prevStep()">Previous</button>
+            <button id="nextBtn" onclick="nextStep()">Next</button>
+        </div>
+    </div>
+    <!--Java Script-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            const steps = document.querySelectorAll('.step');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentStep = 0;
+
+            function updateSteps(){
+                steps.forEach((step, index) => {
+                    if (index <= currentStep){
+                        step.classList.add('completed');
+                    } else {
+                        step.classList.remove('completed');
+                    }
+                });
+                prevBtb.disabled = currentStep === 0;
+                nextBtn.disabled = currentStep === steps.length - 1;
+            }
+
+            window.prevStep = function(){
+                if (currentStep > 0){
+                    currentStep--;
+                    updateSteps();
+                }
+            };
+            window.nextStep = function(){
+                if(currentStep < steps.length - 1){
+                    currentStep++;
+                    updateSteps();
+                }
+            };
+
+            updateSteps();
+        });
+    </script>
+</body>
+</html>
